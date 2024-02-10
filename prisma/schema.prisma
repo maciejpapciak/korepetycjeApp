@@ -1,0 +1,110 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["orderByAggregateGroup", "selectRelationCount", "orderByRelation"]
+  binaryTargets = ["debian-openssl-1.1.x"]
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model advertisement {
+  ad_id              Int                @id @default(autoincrement()) @db.UnsignedInt
+  title              String             @db.VarChar(255)
+  content            String             @db.Text
+  price              Decimal            @db.Decimal(10, 2)
+  date_created       DateTime           @default(now()) @db.Timestamp(0)
+  view_count         Int                @default(0) @db.UnsignedInt
+  is_accepted        Boolean            @default(dbgenerated("b'0'")) @db.Bit(1)
+  class_id           Int                @db.UnsignedInt
+  type_id            Int                @db.UnsignedInt
+  user_id            Int                @db.UnsignedInt
+  classroom          classroom          @relation(fields: [class_id], references: [class_id])
+  advertisement_type advertisement_type @relation(fields: [type_id], references: [type_id])
+  user               user               @relation(fields: [user_id], references: [user_id])
+  follow             follow[]
+
+  @@index([type_id], name: "fk_advertisement_advertisement_type1_idx")
+  @@index([class_id], name: "fk_advertisement_class1_idx")
+  @@index([user_id], name: "fk_advertisement_user1_idx")
+}
+
+model advertisement_type {
+  type_id       Int             @id @default(autoincrement()) @db.UnsignedInt
+  name          String          @db.VarChar(45)
+  advertisement advertisement[]
+}
+
+model callendar {
+  id         Int      @id @default(autoincrement()) @db.UnsignedInt
+  time_start DateTime @db.Time(0)
+  time_end   DateTime @db.Time(0)
+  weekday    Int      @db.UnsignedInt
+  title      String   @db.VarChar(255)
+  user_id    Int      @db.UnsignedInt
+  user       user     @relation(fields: [user_id], references: [user_id])
+
+  @@index([user_id], name: "fk_callendar_user1_idx")
+}
+
+model classroom {
+  class_id      Int             @id @default(autoincrement()) @db.UnsignedInt
+  name          String          @db.VarChar(255)
+  advertisement advertisement[]
+}
+
+model follow {
+  follow_id           Int           @id @default(autoincrement()) @db.UnsignedInt
+  user_user_id        Int           @db.UnsignedInt
+  advertisement_ad_id Int           @db.UnsignedInt
+  advertisement       advertisement @relation(fields: [advertisement_ad_id], references: [ad_id])
+  user                user          @relation(fields: [user_user_id], references: [user_id])
+
+  @@index([advertisement_ad_id], name: "fk_follow_advertisement1_idx")
+  @@index([user_user_id], name: "fk_follow_user1_idx")
+}
+
+model user {
+  user_id                                   Int             @id @default(autoincrement()) @db.UnsignedInt
+  nickname                                  String          @unique @db.VarChar(45)
+  name                                      String          @db.VarChar(45)
+  surname                                   String          @db.VarChar(45)
+  email                                     String          @unique @db.VarChar(45)
+  avatar                                    String?         @db.VarChar(255)
+  password                                  String          @db.Char(60)
+  is_email_confirmed                        Boolean         @default(dbgenerated("b'0'")) @db.Bit(1)
+  register_token                            String          @db.VarChar(45)
+  date_created                              DateTime        @default(now()) @db.Timestamp(0)
+  facebook_url                              String?         @unique @db.VarChar(255)
+  phone_number                              String?         @db.VarChar(12)
+  user_type                                 Int             @db.UnsignedInt
+  user_type_userTouser_type                 user_type       @relation(fields: [user_type], references: [usertype_id])
+  advertisement                             advertisement[]
+  callendar                                 callendar[]
+  follow                                    follow[]
+  user_rating_userTouser_rating_recipent_id user_rating[]   @relation("userTouser_rating_recipent_id")
+  user_rating_userTouser_rating_sender_id   user_rating[]   @relation("userTouser_rating_sender_id")
+
+  @@index([user_type], name: "fk_user_user_type_idx")
+}
+
+model user_rating {
+  rating_id                          Int      @id @default(autoincrement()) @db.UnsignedInt
+  content                            String   @db.Text
+  rating_number                      Int      @db.UnsignedInt
+  date_created                       DateTime @default(now()) @db.Timestamp(0)
+  sender_id                          Int      @db.UnsignedInt
+  recipent_id                        Int      @db.UnsignedInt
+  user_userTouser_rating_recipent_id user     @relation("userTouser_rating_recipent_id", fields: [recipent_id], references: [user_id])
+  user_userTouser_rating_sender_id   user     @relation("userTouser_rating_sender_id", fields: [sender_id], references: [user_id])
+
+  @@index([sender_id], name: "fk_user_rating_user1_idx")
+  @@index([recipent_id], name: "fk_user_rating_user2_idx")
+}
+
+model user_type {
+  usertype_id Int    @id @default(autoincrement()) @db.UnsignedInt
+  name        String @unique @db.VarChar(45)
+  user        user[]
+}

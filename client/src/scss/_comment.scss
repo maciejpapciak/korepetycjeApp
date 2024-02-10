@@ -1,0 +1,55 @@
+.comment {
+    padding: 0 2rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: flex-start;
+    color: var(--clr-text3);
+    &-description {
+        font-family: var(--ff-text);
+        font-size: 1.1rem;
+        font-weight: normal;
+    }
+    &-bottom {
+        padding-bottom: 1rem;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    &-user {
+        &-delete {
+            font-size: 0.8rem;
+            height: 1.5rem !important;
+            margin-right: 1rem;
+            transform: translateY(-5px);
+        }
+        &-flex {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+        }
+        &-name {
+            text-transform: uppercase;
+            align-self: center;
+            font-family: var(--ff-heading);
+            font-weight: bolder;
+            transform: translateX(-4px);
+            font-size: 1.1rem;
+            text-align: end;
+            color: var(--clr-accent);
+            grid-column: 1;
+            grid-row: 1;
+            margin-right: 0.5rem;
+            cursor: pointer;
+        }
+        &-container {
+            cursor: pointer;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            grid-template-rows: auto;
+        }
+    }
+}

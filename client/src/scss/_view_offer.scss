@@ -1,0 +1,65 @@
+.offer-page {
+	display: flex;
+	align-items: center;
+	margin: 5em auto;
+	@media screen and (max-width: 940px) {
+		flex-direction: column;
+	}
+}
+
+.price-follow {
+	display: flex;
+	justify-content: space-between;
+	text-transform: uppercase;
+	@media screen and (max-width: 940px) {
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+.offer-item-price {
+	color: var(--clr-text);
+	font-size: 2rem;
+	font-weight: 700;
+	span {
+		font-weight: 400;
+	}
+}
+
+.offer-title {
+	h1 {
+		margin: 0;
+	}
+	h2 {
+		margin: 0;
+		font-size: 0.9rem;
+		line-height: 0;
+	}
+}
+
+.offer-follow {
+	font-weight: 700;
+	color: var(--clr-accent);
+	font-size: 1.2rem;
+	cursor: pointer;
+	i {
+		font-weight: 400;
+	}
+	&:hover i {
+		font-weight: 700;
+	}
+}
+
+.offer-follow.followed i {
+	font-weight: 700;
+}
+
+.user-info {
+	color: inherit;
+	text-decoration: none;
+}
+
+.offer-item {
+	width: 100%;
+}

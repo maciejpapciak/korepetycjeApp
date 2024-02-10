@@ -1,0 +1,49 @@
+.materialy-korepetycje {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    padding: 0;
+    margin: 2rem;
+    height: 4rem;
+    width: 25rem;
+    color: var(--light-gray);
+    label {
+        transform: translateY(2px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &:focus {
+        outline: none;
+    }
+    &-active {
+        font-size: 1.2rem;
+        color: var(--clr-bg);
+        font-family: var(--ff-text);
+        font-weight: bolder;
+        text-align: center;
+    }
+    &-background {
+        grid-column: 1/3;
+        grid-row: 1;
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-image: var(--img-materialy_korepetycje);
+        &-rotated {
+            transform: scale(-1);
+        }
+    }
+    &-materialy {
+        background-color: transparent;
+        grid-column: 1;
+        grid-row: 1;
+    }
+    &-korepetycje {
+        grid-row: 1;
+        grid-column: 2;
+    }
+}

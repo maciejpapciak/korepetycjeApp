@@ -1,0 +1,110 @@
+{
+  "global": {
+    "formEmail": "Wpisz email",
+    "formPassword": "Wpisz hasło",
+    "success": "Sukces",
+    "error": "Wystąpił błąd"
+  },
+  "navMenu": {
+    "login": "Logowanie",
+    "register": "Rejestracja",
+    "changeLanguage": "Zmień język",
+    "changeTheme": "Zmień motyw"
+  },
+  "loginPage": {
+    "sectionName": "Logowanie",
+    "Title": "Witaj!",
+    "description": "Zaloguj się na utworzone konto lub ",
+    "cta": "zarejestruj się",
+    "button": "Zaloguj"
+  },
+  "registerPage": {
+    "sectionName": "Rejestracja",
+    "formName": "Wpisz imię",
+    "formSurname": "Wpisz nazwisko",
+    "formNickname": "Wpisz nazwę użytkownika",
+    "formUserType": "Wybierz typ użytkownika",
+    "formSzukajacy": "Szukający",
+    "formWystawiajacy": "Wystawiający",
+    "formPasswordRepeat": "Powtórz hasło",
+    "button": "Zarejestruj"
+  },
+  "about": {
+    "title": "Jesteś zalogowany"
+  },
+  "dropdownMenu": {
+    "account": "Konto",
+    "browse": "Przeglądaj ogłoszenia",
+    "followed": "Obserwowane",
+    "logOut": "Wyloguj się",
+    "logIn": "Logowanie",
+    "signUp": "Rejestracja",
+    "ranking": "Ranking"
+  },
+  "profilePage": {
+    "editData": "Edytuj dane",
+    "inputName": "Wpisz imię",
+    "inputLastname": "Wpisz nazwisko",
+    "inputPhone": "Wpisz numer telefonu",
+    "inputFb": "Wpisz adres do profilu na Facebook'u (opcjonalnie)",
+    "inputAvatar": "Wpisz adres do obrazu awatara (opcjonalnie)",
+    "inputPassword": "Wpisz hasło",
+    "repeatPassword": "Powtórz hasło",
+    "saveData": "Zapisz",
+    "lessons": "Korepetycje",
+    "materials": "Materiały",
+    "comments": "Komentarze",
+    "RATING": "OCENA",
+    "add": "Dodaj",
+    "close": "Zamknij",
+    "addComment": "Dodaj komentarz"
+  },
+  "switchType": {
+    "MATERIALS": "MATERIAŁY",
+    "LESSONS": "KOREPETYCJE"
+  },
+  "offer": {
+    "deleteOffer": "Usuń ofertę",
+    "editOffer": "Edytuj ofertę",
+    "package": "Pakiet",
+    "hour": "Godzina",
+    "readMore": "Czytal dalej",
+    "accept": "Akceptuj",
+    "reject": "Odrzuć"
+  },
+  "dateFilter": {
+    "addedOn": "Data dodania",
+    "anytime": "Kiedykolwiek",
+    "today": "Dzisiaj",
+    "thisWeek": "W tym tygodniu",
+    "thisMonth": "W tym miesiącu"
+  },
+  "user": {
+    "rating": "Ocena",
+    "editData": "Edytuj dane"
+  },
+  "browse": {
+    "subject": "Przedmiot",
+    "searchLabel": "Wpisz nazwę przedmiotu",
+    "allSubjects": "Wszystkie",
+    "offers": "Oferty"
+  },
+  "createOffer": {
+    "formTitle": "Wpisz tytuł",
+    "formDesc": "Wpisz opis",
+    "formCategory": "Wybierz kategorię",
+    "formPrice": "Wpisz cenę",
+    "formSave": "Zapisz zmiany",
+    "formAdd": "Dodaj ofertę"
+  },
+  "favorite": {
+    "followedOffers": "Followed Offers",
+    "follow": "Dodaj do obserwowanych",
+    "unfollow": "Usuń z obserwowanych",
+    "viewCount": "Liczba wyświetleń: ",
+    "noFavorite": "Brak obserwowanych ofert"
+  },
+  "ranking": {
+    "rankingHeading": "Ranking korepetytorów"
+  }
+}

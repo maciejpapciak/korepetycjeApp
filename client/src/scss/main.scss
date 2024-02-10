@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2&family=Baloo+Bhaina+2:wght@400;700&display=swap');
+// Base styling, custom properties
+@import '_base';
+@import '_buttons';
+@import '_typography';
+// Layout
+@import '_header';
+@import '_login';
+@import '_profile';
+@import '_browse';
+@import '_favorite';
+@import '_view_offer.scss';
+// Components
+@import '_comment';
+@import '_offer';
+@import '_type_switcher';
+@import '_rating';
+@import '_avatar';
+@import '_user_data';
+@import '_modal';
+@import '_create_edit_offer';
+@import '_pagination';
+@import '_calendar';

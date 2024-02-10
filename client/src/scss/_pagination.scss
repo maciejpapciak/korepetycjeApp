@@ -1,0 +1,51 @@
+.page {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 5rem;
+	//margin: 3rem;
+	border-radius: 0.6rem;
+	//background: #ffffff;
+	padding: 0;
+
+	&__numbers,
+	&__btn,
+	&__dots {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 0.8rem;
+		font-size: 1.4rem;
+		cursor: pointer;
+	}
+
+	&__numbers {
+		width: 2.6rem;
+		height: 2.6rem;
+		border-radius: 0.4rem;
+
+		&:hover {
+			color: var(--clr-accent);
+		}
+
+		&.active {
+			color: #ffffff;
+			background: var(--clr-accent);
+			font-weight: 600;
+			border: 1px solid var(--clr-accent);
+		}
+	}
+
+	&__btn {
+		color: var(--clr-primary);
+
+		&.active {
+			color: var(--clr-accent);
+			pointer-events: initial;
+
+			&:hover {
+				color: var(--clr-accent);
+			}
+		}
+	}
+}

@@ -1,0 +1,433 @@
+openapi: 3.0.3
+info:
+  title: Projekt z IO [IOG1]
+  description: KorepetycjeApp
+  version: 1.0.0
+
+servers:
+  - url: http://localhost:3000
+
+tags:
+  - name: 'AUTH'
+    description: 'Autoryzacja użytkowników'
+  - name: 'KOREPETYTORZY'
+    description: 'Obsługa korepetytorów'
+  - name: 'OGŁOSZENIA'
+    description: 'Obsługa ogłoszeń'
+
+paths:
+  /v1/api/auth/login:
+    post:
+      tags:
+        - 'AUTH'
+      requestBody:
+        content:
+          email:
+            schema:
+              type: email
+              example: test@email.test
+          nickname:
+            schema:
+              type: string
+              example: testUser123
+          password:
+            schema:
+              type: string
+              example: haslo123
+      description: Logowanie użytkownika
+  /v1/api/auth/register:
+    post:
+      tags:
+        - 'AUTH'
+      requestBody:
+        content:
+          name:
+            schema:
+              type: imię
+              example: Jan
+          surname:
+            schema:
+              type: nazwisko
+              example: Kowalski
+          email:
+            schema:
+              type: email
+              example: test@email.test
+          nickname:
+            schema:
+              type: pseudonim
+              example: JanKow
+          userType:
+            schema:
+              type: typ użytkownika
+              example: 1
+      description: Rejestracja użytkownika
+  /v1/api/auth/confirmation/{email}/{token}:
+    get:
+      tags:
+        - 'AUTH'
+      parameters:
+        - in: path
+          name: email
+          schema:
+            type: email
+          description: email użytkownika podany przy rejestracji
+        - in: path
+          name: token
+          schema:
+            type: token
+          description: token użytkownika podany przy rejestracji
+      description: Potwierdzenie rejestracji poprzez email
+  /v1/api/korepetytors:
+    get:
+      tags:
+        - 'KOREPETYTORZY'
+      description: Zwróć wszystkich korepetytorów
+  /v1/api/korepetytors/{id}:
+    get:
+      tags:
+        - 'KOREPETYTORZY'
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: id
+          description: ID użytkownika
+      description: Zwróć korepetytora po ID
+  /v1/api/ads?page=1&size=5:
+    get:
+      tags:
+        - 'OGŁOSZENIA'
+      parameters:
+        - in: query
+          name: page
+          schema:
+            type: integer
+          description: Numer strony (numeracja od 0)
+        - in: query
+          name: size
+          schema:
+            type: integer
+            default: 10
+          description: Ilość zwracanych rekordów (domyślnie to 10)
+      description: Zwróć ogłoszenia na podanej stronie o podanej wielkości
+  /v1/api/ads?page=1:
+    get:
+      tags:
+        - 'OGŁOSZENIA'
+      parameters:
+        - in: query
+          name: page
+          schema:
+            type: integer
+          description: Numer strony (numeracja od 0)
+      description: Zwróć wszystkie ogłoszenia na podanej stronie z domyślną wielkością
+  /v1/api/ads?size=3:
+    get:
+      tags:
+        - 'OGŁOSZENIA'
+      parameters:
+        - in: query
+          name: size
+          schema:
+            type: integer
+            default: 10
+          description: Ilość zwracanych rekordów
+      description: Zwróć podaną ilość ogłoszeń
+  /v1/api/ads/accepted?page=1&size=5:
+    get:
+      tags:
+        - 'OGŁOSZENIA'
+      parameters:
+        - in: query
+          name: page
+          schema:
+            type: integer
+          description: Numer strony (numeracja od 0)
+        - in: query
+          name: size
+          schema:
+            type: integer
+            default: 10
+          description: Ilość zwracanych rekordów
+      description: Zwróć zaakceptowane ogłoszenia na podanej stronie o podanej wielkości
+  /v1/api/ads/accepted?page=1:
+    get:
+      tags:
+        - 'OGŁOSZENIA'
+      parameters:
+        - in: query
+          name: page
+          schema:
+            type: integer
+          description: Numer strony (numeracja od 0)
+      description: Zwróć wszystkie zaakceptowane ogłoszenia na podanej stronie z domyślną wielkością
+  /v1/api/ads/accepted?size=3:
+    get:
+      tags:
+        - 'OGŁOSZENIA'
+      parameters:
+        - in: query
+          name: size
+          schema:
+            type: integer
+            default: 10
+          description: Ilość zwracanych rekordów
+      description: Zwróć podaną ilość zaakceptowanych ogłoszeń
+  /v1/api/ads/{id}:
+    get:
+      tags:
+        - 'OGŁOSZENIA'
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: integer
+          description: ID użytkownika
+      description: Zwróć ogłoszenie o podanym ID
+    put:
+      tags:
+        - 'OGŁOSZENIA'
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: id
+          description: ID ogłoszenia
+      requestBody:
+        content:
+          title:
+            schema:
+              type: tytuł
+              example: Ogłoszenie
+          content:
+            schema:
+              type: treść
+              example: Treść ogłoszenia
+          price:
+            schema:
+              type: cena
+              example: 1337
+          classId:
+            schema:
+              type: ID przedmiotu
+              example: 2
+          typeId:
+            schema:
+              type: Typ ogłoszenia
+              example: 1
+      description: Zmień ogłoszenie o podanym ID
+    delete:
+      tags:
+        - 'OGŁOSZENIA'
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: id
+          description: ID ogłoszenia
+      description: Usuń ogłoszenie o podanym ID
+  /v1/api/ads:
+    post:
+      tags:
+        - 'OGŁOSZENIA'
+      requestBody:
+        content:
+          title:
+            schema:
+              type: tytuł
+              example: Ogłoszenie
+          content:
+            schema:
+              type: treść
+              example: Treść ogłoszenia
+          price:
+            schema:
+              type: cena
+              example: 1337
+          classId:
+            schema:
+              type: ID przedmiotu
+              example: 2
+          typeId:
+            schema:
+              type: Typ ogłoszenia
+              example: 1
+      description: Dodaj ogłoszenie
+
+components:
+  schemas:
+    advertisement:
+      type: object
+      properties:
+        ad_id:
+          type: int unsigned
+        title:
+          type: varchar(255)
+        content:
+          type: text
+        price:
+          type: decimal(10, 2)
+        date_created:
+          type: timestamp
+        view_count:
+          type: int unsigned
+        is_accepted:
+          type: bool
+        class_id:
+          type: int unsigned
+        type_id:
+          type: int unsigned
+        user_id:
+          type: int unsigned
+      example:
+        ad_id: 1
+        title: Przykładowe ogłoszenie
+        content: Sprzedaję materiały do przedmiotu...
+        price: 100.00
+        date_created: now()
+        view_count: 55
+        is_accepted: true
+        class_id: 1
+        type_id: 1
+        user_id: 1
+
+    advertisement_type:
+      type: object
+      properties:
+        type_id:
+          type: int unsigned
+        name:
+          type: varchar(45)
+      example:
+        type_id: 1
+        name: Materiały
+
+    calendar:
+      type: object
+      properties:
+        id:
+          type: int unsigned
+        time_start:
+          type: time
+        time_end:
+          type: time
+        weekday:
+          type: int unsigned
+        title:
+          type: varchar(255)
+        user_id:
+          type: int unsigned
+      example:
+        id: 1
+        time_start: 12:00:00
+        time_end: 14:00:00
+        weekday: Sobota
+        title: Przykładowy tytuł
+        user_id: 1
+
+    classroom:
+      type: object
+      properties:
+        class_id:
+          type: int unsigned
+        name:
+          type: varchar(255)
+      example:
+        class_id: 1
+        name: Przykładowy przedmiot
+
+    follow:
+      type: object
+      properties:
+        follow_id:
+          type: int unsigned
+        user_user_id:
+          type: int unsigned
+        advertisement_ad_id:
+          type: int unsigned
+      example:
+        follow_id: 1
+        user_user_id: 2
+        advertisement_ad_id: 1
+
+    user:
+      type: object
+      properties:
+        user_id:
+          type: int unsigned
+        nickname:
+          type: varchar(45)
+        name:
+          type: varchar(45)
+        surname:
+          type: varchar(45)
+        email:
+          type: varchar(45)
+        avatar:
+          type: varchar(255)
+        password:
+          type: binary(60)
+        is_email_confirmed:
+          type: bool
+        register_token:
+          type: varchar(45)
+        date_created:
+          type: timestamp
+        facebook_url:
+          type: varchar(455)
+        phone_number:
+          type: varchar(12)
+        user_type:
+          type: int unsigned
+        course_id:
+          type: int unsigned
+      example:
+        user_id: 1
+        nickname: przykładowy nick
+        name: przykładowe imie
+        surname: przykładowe nazwisko
+        email: przykładowy email
+        avatar: ścieżka do avataru
+        password: hash hasła
+        is_email_confirmed: false
+        register_token: przykładowy token
+        date_created: '2023-03-20 21:00:00'
+        facebook_url: przykładowy url do facebooka
+        phone_number: +48111222333
+        user_type: 1
+        course_id: 1
+
+    user_rating:
+      type: object
+      properties:
+        rating_id:
+          type: int unsigned
+        content:
+          type: text
+        rating_number:
+          type: int unsigned
+        date_created:
+          type: timestamp
+        sender_id:
+          type: int unsigned
+        recipent_id:
+          type: int unsigned
+      example:
+        rating_id: 1
+        content: Przykładowa treść
+        rating_number: 4
+        date_created: '2011-04-20 21:00:00'
+        sender_id: 1
+        recipent_id: 3
+
+    user_type:
+      type: object
+      properties:
+        usertype_id:
+          type: int unsigned
+        name:
+          type: varchar(45)
+      example:
+        usertype_id: 1
+        name: szukający

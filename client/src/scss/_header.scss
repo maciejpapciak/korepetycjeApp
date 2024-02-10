@@ -1,0 +1,184 @@
+.app-logo {
+	pointer-events: none;
+}
+
+#main-header {
+	background-color: var(--clr-primary);
+	color: var(--white);
+	padding: 3em 0;
+	position: relative;
+	.wrapper {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+}
+
+.custom-shape-divider-bottom-1619698757 {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	overflow: hidden;
+	line-height: 0;
+}
+
+.custom-shape-divider-bottom-1619698757 svg {
+	position: relative;
+	display: block;
+	width: calc(120% + 1.3px);
+	height: 30px;
+	transform: rotateY(180deg);
+}
+
+.custom-shape-divider-bottom-1619698757 .shape-fill {
+	fill: var(--clr-bg);
+}
+
+///////
+// Header Menu
+
+.header__nav {
+	position: relative;
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	hr {
+		border: 0;
+		height: 0;
+		margin: 1.5rem 0;
+		border-top: 1px solid var(--light-gray);
+	}
+}
+.header__navbar {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+.header__item {
+	padding: 1rem;
+}
+.header--icon {
+	width: 2rem;
+	height: 2rem;
+}
+.header--button {
+	top: 0;
+	right: 0;
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	color: var(--white);
+	cursor: pointer;
+	border: 1px solid transparent;
+	background-color: transparent;
+	&:focus {
+		outline: 0;
+	}
+}
+
+// Dropdown Menu
+
+.dropdown__menu {
+	top: 100%;
+	right: 0;
+	position: absolute;
+	z-index: 10;
+	height: 25rem;
+	min-width: 300px;
+	margin-top: 1rem;
+	overflow-y: auto;
+	padding: 2rem 1rem 2rem 0rem;
+	border-radius: 12px;
+	background-color: var(--clr-bg);
+	border: 1px solid var(--clr-border);
+	background-clip: padding-box;
+
+	&-link {
+		all: unset;
+		width: 90%;
+		display: flex;
+		cursor: pointer;
+		align-items: center;
+		justify-content: flex-start;
+		text-decoration: none;
+		color: var(--clr-text);
+		padding: 0.8rem 0 0.8rem 2rem;
+		margin-top: 0.2rem;
+		margin-bottom: 0.2rem;
+		border-radius: 0 50px 50px 0;
+
+		&:hover {
+			color: var(--white);
+			background-color: var(--clr-accent);
+		}
+	}
+
+	&-setting {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		text-decoration: none;
+		color: var(--clr-text);
+		padding: 0.8rem 0 0.8rem 2rem;
+		margin-top: 0.2rem;
+		margin-bottom: 0.2rem;
+		border-radius: 0 50px 50px 0;
+	}
+
+	&-svg {
+		width: 1.5rem;
+		height: 1.5rem;
+		font-size: 1.5rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&-text {
+		font-weight: 300;
+		margin-left: 1rem;
+		margin-right: 1rem;
+	}
+
+	&-setting-text {
+		font-weight: 300;
+		margin-right: 1rem;
+	}
+}
+
+// Animation Menu Icon
+
+.slide-fade-enter-active,
+.slide-fade-leave-active {
+	transition: all 0.6s;
+}
+.slide-fade-enter,
+.slide-fade-leave-active {
+	opacity: 0;
+}
+.slide-fade-enter {
+	transform: translateX(31px);
+}
+.slide-fade-leave-active {
+	transform: translateX(-31px);
+}
+
+// Dropdown Menu Animation
+
+.dropdown-enter-active,
+.dropdown-leave-active {
+	transition: all 1s;
+}
+.dropdown-enter-from,
+.dropdown-leave-to {
+	opacity: 0;
+	transform: translateY(30px);
+}
+
+.toggle-slider {
+	display: flex;
+	align-items: center;
+}

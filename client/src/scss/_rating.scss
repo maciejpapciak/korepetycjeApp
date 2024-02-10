@@ -1,0 +1,91 @@
+.rating {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	&-star {
+		width: 2rem;
+		height: 2rem;
+		background-color: transparent;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-clip: padding-box;
+		background-image: var(--img-star1);
+		&-full {
+			background-image: var(--img-star2);
+		}
+		&-half {
+			background-image: var(--img-star3);
+		}
+	}
+}
+
+// Ranking
+.ranking-heading {
+	text-align: center;
+	color: var(--clr-text);
+	font-size: 2.5rem;
+}
+
+.ranking-list {
+	margin: 2em auto;
+	padding: 0;
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.ranking-list__item {
+	margin: 0;
+}
+
+.ranking-list__link {
+	display: flex;
+	text-decoration: none;
+	//justify-content: center;
+	align-items: center;
+	border-bottom: 2px solid var(--clr-accent);
+	padding: 2em;
+	transition: all .3s ease;
+	position: relative;
+	&:hover {
+		transform: scale(1.01);
+	}
+}
+
+.user-box__nickname {
+	margin: 0;
+}
+
+.user-box__data {
+	display: flex;
+	flex-direction: column;
+	min-width: 150px;
+	margin-left: 2em;
+}
+
+.rating-container {
+	display: flex;
+	justify-content: space-between;
+	span {
+		color: var(--clr-text);
+		margin-left: .5em;
+		margin-top: 5px;
+	}
+}
+
+.user-box__avatar {
+	display: flex;
+	align-items: center;
+}
+
+.placement-number {
+	color: var(--clr-accent);
+	font-weight: 700;
+	line-height: 4rem;
+	font-size: 4rem;
+	margin-top: 15px;
+	margin-right: 1em;
+}

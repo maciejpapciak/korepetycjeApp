@@ -1,0 +1,35 @@
+.calendar-list {
+	margin: 2em 0;
+	padding: 0;
+}
+
+.calendar-item {
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 1px solid var(--clr-accent);
+	p {
+		margin-right: 2em;
+	}
+	button {
+		all: unset;
+		color: var(--clr-accent);
+		font-size: 1.2rem;
+		cursor: pointer;
+		transition: transform .3s ease;
+		&:hover {
+			transform: scale(1.1);
+		}
+	}
+}
+
+.flex-row {
+	display: flex;
+}
+
+.calendar-main {
+	.fc .fc-timegrid-axis-cushion,
+	.fc .fc-timegrid-slot-label-cushion,
+	.fc .fc-col-header-cell-cushion {
+		color: var(--clr-text);
+	}
+}

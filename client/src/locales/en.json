@@ -1,0 +1,110 @@
+{
+  "global": {
+    "formEmail": "Enter email address",
+    "formPassword": "Enter password",
+    "success": "Success",
+    "error": "Error"
+  },
+  "navMenu": {
+    "login": "Sign in",
+    "register": "Sign up",
+    "changeLanguage": "Change language",
+    "changeTheme": "Change theme"
+  },
+  "loginPage": {
+    "sectionName": "Sign in",
+    "Title": "Hello!",
+    "description": "Sign in to your account or ",
+    "cta": "sign up",
+    "button": "Submit"
+  },
+  "registerPage": {
+    "sectionName": "Sign up",
+    "formName": "Enter first name",
+    "formSurname": "Enter last name",
+    "formNickname": "Enter nickname",
+    "formUserType": "Choose user type",
+    "formSzukajacy": "I'm just browsing",
+    "formWystawiajacy": "I want to post advertisements",
+    "formPasswordRepeat": "Repeat password",
+    "button": "Submit"
+  },
+  "about": {
+    "title": "You are signed in"
+  },
+  "dropdownMenu": {
+    "account": "Account",
+    "browse": "Browse offers",
+    "followed": "Followed offers",
+    "logOut": "Log out",
+    "logIn": "Log in",
+    "signUp": "Sign up",
+    "ranking": "Ranking"
+  },
+  "profilePage": {
+    "editData": "Edit profile",
+    "inputName": "Input name",
+    "inputLastname": "Input last name",
+    "inputPhone": "Input phone number",
+    "inputFb": "Input Facebook's profile address (optional)",
+    "inputAvatar": "Input profile's image address (optional)",
+    "inputPassword": "Input password",
+    "repeatPassword": "Repeat password",
+    "saveData": "Save",
+    "lessons": "Lessons",
+    "materials": "Materials",
+    "comments": "Comments",
+    "RATING": "RATING",
+    "add": "Add",
+    "close": "Close",
+    "addComment": "Add comment"
+  },
+  "switchType": {
+    "MATERIALS": "MATERIALS",
+    "LESSONS": "LESSONS"
+  },
+  "offer": {
+    "deleteOffer": "Delete offer",
+    "editOffer": "Edit offer",
+    "package": "Package",
+    "hour": "Hour",
+    "readMore": "Read More",
+    "accept": "Accept",
+    "reject": "Reject"
+  },
+  "dateFilter": {
+    "addedOn": "Posted",
+    "anytime": "Anytime",
+    "today": "Today",
+    "thisWeek": "This week",
+    "thisMonth": "This month"
+  },
+  "user": {
+    "rating": "Rating",
+    "editData": "Edit data"
+  },
+  "browse": {
+    "subject": "Subject",
+    "searchLabel": "Enter subject name",
+    "allSubjects": "All",
+    "offers": "Offers"
+  },
+  "createOffer": {
+    "formTitle": "Enter Title",
+    "formDesc": "Enter description",
+    "formCategory": "Choose subject",
+    "formPrice": "Enter price",
+    "formSave": "Save changes",
+    "formAdd": "Add offer"
+  },
+  "favorite": {
+    "followedOffers": "Followed Offers",
+    "follow": "Follow",
+    "unfollow": "Unfollow",
+    "viewCount": "View count: ",
+    "noFavorite": "No followed offers"
+  },
+  "ranking": {
+    "rankingHeading": "Top ranking"
+  }
+}

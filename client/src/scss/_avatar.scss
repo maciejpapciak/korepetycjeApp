@@ -1,0 +1,32 @@
+.avatar {
+    width: 3rem;
+    height: 3rem;
+    position: relative;
+    color: var(--white);
+    background: var(--dark-gray);
+    background-image: url('../assets/svg/user-alt-solid\ 1.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-clip: padding-box;
+    border: solid 0.2rem transparent;
+    border-radius: 100em;
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        margin: var(--border);
+        border-radius: inherit;
+        background: var(--clr-accent);
+    }
+    &-container {
+        z-index: 3;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
